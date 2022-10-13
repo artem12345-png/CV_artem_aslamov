@@ -1,0 +1,33 @@
+- name: Cron
+  hosts: all
+  vars:
+    project_name: 'xway_fbs'
+    target_project_dir: '/opt/{{ project_name }}'
+
+  tasks:
+  - name: cron
+    cron:
+      name: '{{ item.name }}'
+      job: "/usr/local/bin/docker-compose -f {{ target_project_dir }}/docker-compose.yml up {{ item.name }}"
+      minute: '{{ item.minute }}'
+      hour: '{{ item.hour }}'
+      disabled: '{{ cron_disabled | default(false) }}'
+    when: '{{ item.when }}'
+
+    with_items:
+    - name: 'xway_create_act'
+      minute: '30'
+      hour: '7'
+      when: '{{ inventory_hostname == "daemon4" }}'
+    - name: 'ozon_sync_statuses'
+      minute: '*/10'
+      hour: '*'
+      when: '{{ inventory_hostname == "daemon4" }}'
+    - name: 'ozon_update_warehouses'
+      minute: '0'
+      hour: '0'
+      when: '{{ inventory_hostname == "daemon4" }}'
+    - name: 'ozon_get_new_orders'
+      minute: '*/2'
+      hour: '*'
+      when: '{{ inventory_hostname == "daemon4" }}'

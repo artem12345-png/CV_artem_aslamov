@@ -1,0 +1,86 @@
+version: '3'
+
+services:
+  xway_fbs:
+    container_name: xway_fbs
+    hostname: xway_fbs
+    image: 'git3.promsoft.ru:5005/epool/xway_fbs'
+    restart: always
+    env_file:
+    - xway_fbs.env
+    command: "python3 server.py"
+    volumes:
+    - /var/log/xway_fbs:/opt/xway_fbs/logs
+    ports:
+    - "8998:8998"
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.xway_fbs.{{ inventory_hostname }}"
+
+  xway_create_act:
+    container_name: xway_create_act_worker
+    image: 'git3.promsoft.ru:5005/epool/xway_fbs'
+    env_file:
+    - xway_fbs.env
+    command: "python3 console.py --script=send_mail_with_act"
+    volumes:
+      - /var/log/xway_fbs:/opt/xway_fbs/logs
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.xway_fbs.{{ inventory_hostname }}"
+
+  ozon_sync_statuses:
+    container_name: ozon_sync_statuses
+    image: 'git3.promsoft.ru:5005/epool/xway_fbs'
+    env_file:
+      - xway_fbs.env
+    command: "python3 console.py --script=update_statuses"
+    volumes:
+      - /var/log/xway_fbs:/opt/xway_fbs/logs
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.xway_fbs.{{ inventory_hostname }}"
+
+  ozon_update_warehouses:
+    container_name: ozon_update_warehouses
+    image: 'git3.promsoft.ru:5005/epool/xway_fbs'
+    env_file:
+      - xway_fbs.env
+    command: "python3 console.py --script=update_warehouses"
+    volumes:
+      - /var/log/xway_fbs:/opt/xway_fbs/logs
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.xway_fbs.{{ inventory_hostname }}"
+
+  ozon_get_new_orders:
+    container_name: ozon_get_new_orders
+    image: 'git3.promsoft.ru:5005/epool/xway_fbs'
+    env_file:
+      - xway_fbs.env
+    command: "python3 console.py --script=get_new_orders"
+    volumes:
+      - /var/log/xway_fbs:/opt/xway_fbs/logs
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.xway_fbs.{{ inventory_hostname }}"
+
+networks:
+  default:
+    external:
+      name: promsoft

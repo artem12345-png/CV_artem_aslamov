@@ -1,0 +1,21 @@
+FROM python:3.10
+
+# Setting Moscow time-zone
+ENV TZ=Europe/Moscow
+# hadolint ignore=DL3008
+RUN ln -snf "/usr/share/zoneinfo/${TZ}" /etc/localtime && \
+    echo "${TZ}" > /etc/timezone && \
+    apt-get install --no-install-recommends -y tzdata default-libmysqlclient-dev && \
+    dpkg-reconfigure --frontend noninteractive tzdata
+
+WORKDIR /opt/xway_fbs
+
+# Создаем папку с логaми
+RUN mkdir logs
+COPY deploy/FreeSans.ttf FreeSans.ttf
+COPY deploy/calibri_bold.ttf calibri_bold.ttf
+COPY deploy/logging.yaml logging.yaml
+
+# Устанавливаем пакеты Python
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt

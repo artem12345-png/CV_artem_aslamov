@@ -1,0 +1,80 @@
+- name: Deploy microservice
+  hosts: all
+  # Using only one ansible worker (for split deploy)
+  serial: 1
+
+  vars:
+    proj_name: wb_fbs
+    proj_dir: '/opt/{{ proj_name }}'
+
+    registry_addr: git3.promsoft.ru:5005
+    registry_access_token: '{{ lookup("env", "REGISTRY_ACCESS_TOKEN") }}'
+    image_tag: 'git3.promsoft.ru:5005/epool/wb_fbs'
+
+
+  tasks:
+    - name: Test service
+      stat: path={{ proj_dir }}/docker-compose.yml
+      register: compose_file
+
+    - name: Create dirs
+      file:
+        state: directory
+        mode: "{{ item.mode | default('755') }}"
+        path: "{{ item.path }}"
+      with_items:
+        - path: "{{ proj_dir }}"
+
+    - name: Docker login
+      community.docker.docker_login:
+        username: gitlab-ci-token
+        password: '{{ registry_access_token }}'
+        registry_url: '{{ registry_addr }}'
+
+    - name: Common configs
+      template:
+        src: '{{ item.src }}.j2'
+        dest: '{{ item.dest }}'
+      with_items:
+      - {src: deploy.env, dest: '{{ proj_dir }}/{{ proj_name }}.env'}
+
+    - name: Docker-compose down
+      community.docker.docker_compose:
+        project_src: '{{ proj_dir }}'
+        files: [docker-compose.yml]
+        state: absent
+      when: compose_file.stat.exists
+      ignore_errors: yes
+
+    - name: Copy docker-compose
+      template:
+        src: docker-compose.prod.yml
+        dest: '{{ proj_dir }}/docker-compose.yml'
+
+    - name: Docker-compose up
+      community.docker.docker_compose:
+        project_src: '{{ proj_dir }}'
+        files: [docker-compose.yml]
+        pull: yes
+        services:
+            - '{{ proj_name }}'
+
+    - name: Wait for 10 sec
+      wait_for:
+        timeout: 10
+    - name: Wait for instance to be up and running
+      wait_for:
+        port: 8866
+        host: "{{ ansible_host }}"
+        timeout: 60 # sec
+    - name: Test work server {{ inventory_hostname }}:8866
+      uri:
+        url: "http://{{ ansible_host }}:8866/self_check/"
+        body_format: json
+        return_content: yes
+      register: pg_inst
+
+    - name: Fail if error page 8866 content
+      fail:
+        msg: "error: {{ pg_inst.content }}"
+      when: pg_inst.json.status != 'Ok'

@@ -1,0 +1,32 @@
+# -*- coding: utf-8
+
+logging:
+  version: 1
+  formatters:
+    simple:
+      format: '%(asctime)s %(levelname) -10s %(name) -10s %(funcName) -15s %(lineno) 5d: %(message)s'
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: INFO # ERROR
+      formatter: simple
+      stream: ext://sys.stdout
+    file: &file_args
+      class : logging.handlers.RotatingFileHandler
+      level: INFO
+      formatter: simple
+      filename: logs/wb_fbs.log
+      maxBytes: 104857600 # 1024 * 1024 * 100
+      backupCount: 100
+    error:
+      <<: *file_args
+      level: ERROR
+      filename: logs/wb_fbs-error.log
+  loggers:
+    wb_fbs:
+      level: DEBUG
+      handlers: [ console, error, file ]
+    uvicorn:
+      level: DEBUG
+  root:
+    level: DEBUG

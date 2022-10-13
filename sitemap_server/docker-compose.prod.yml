@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  sitemap_server:
+    container_name: sitemap_server
+    hostname: sitemap_server
+    image: 'git3.promsoft.ru:5005/epool/sitemap_server'
+    restart: always
+    env_file:
+    - sitemap_server.env
+    volumes:
+    - /var/log/sitemap_server:/app/logs
+    ports:
+    - "8008:8008"
+    dns:
+    - 8.8.8.8
+    - 1.0.0.1
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.sitemap_server.{{ inventory_hostname }}"
+    extra_hosts:
+      - "daemon4.epool.ru:91.218.228.59"
+
+networks:
+  default:
+    external:
+      name: promsoft

@@ -1,0 +1,13 @@
+site:
+  # конфиг для создания заказа для АБ
+  PLACEMARKET: "ozon"
+  CREATE_METHOD: "create_from_market"
+weight_calc:
+  URL: "http://192.168.0.78:8256"
+s3:
+  BUCKET: ""
+  ENDPOINT: ""
+xway:
+  # нужно подставить свой url для тестов
+  # оригинальный такой "https://ali.aliway.ru/api/v1"
+  URL: ""

@@ -1,0 +1,7 @@
+site:
+  # конфиг для создания заказа для АБ
+  PLACEMARKET: "ozon"
+  CREATE_METHOD: "create_from_market"
+s3:
+  BUCKET: "xway"
+  ENDPOINT: "https://s3.epool.ru"

@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  wb_fbs:
+    container_name: wb_fbs
+    hostname: wb_fbs
+    image: 'git3.promsoft.ru:5005/epool/wb_fbs'
+    restart: always
+    env_file:
+    - wb_fbs.env
+    command: "python3 server_wb.py"
+    volumes:
+    - /var/log/wb_fbs:/opt/wb_fbs/logs
+    ports:
+    - "8866:8866"
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.wb_fbs.{{ inventory_hostname }}"
+
+  wb_require_act:
+    container_name: wb_require_act
+    hostname: wb_require_act
+    image: 'git3.promsoft.ru:5005/epool/wb_fbs'
+    env_file:
+    - wb_fbs.env
+    command: "python3 create_act.py"
+    volumes:
+    - /var/log/wb_fbs:/opt/wb_fbs/logs
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.wb_fbs.{{ inventory_hostname }}"
+
+networks:
+  default:
+    external:
+      name: promsoft

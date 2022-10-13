@@ -1,0 +1,17 @@
+all:
+  children:
+    stage:
+      hosts:
+        frigate: { ansible_host: 192.168.0.78 }
+
+    production:
+      hosts:
+        daemon4:
+          ansible_host: daemon4.epool.ru
+        video3:
+          ansible_host: video3.epool.ru
+
+  vars:
+    ansible_user: root
+    ansible_connection: ssh
+    ansible_ssh_common_args: -C

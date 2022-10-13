@@ -1,0 +1,13 @@
+uvicorn
+fastapi
+lxml
+sentry_sdk
+pyaml
+fluent
+pydantic[dotenv]
+mysqlclient
+
+
+
+
+
