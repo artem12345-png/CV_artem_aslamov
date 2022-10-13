@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  fast_monitor:
+    container_name: fast_monitor
+    hostname: fast_monitor
+    image: 'git3.promsoft.ru:5005/promsoft/fast_monitor'
+    restart: always
+    env_file:
+    - fast_monitor.env
+    volumes:
+    - /var/log/fast_monitor:/app/logs
+    ports:
+    - "7777:7777"
+    dns:
+    - 8.8.8.8
+    - 1.0.0.1
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.fast_monitor.{{ inventory_hostname }}"
+
+networks:
+  default:
+    external:
+      name: promsoft

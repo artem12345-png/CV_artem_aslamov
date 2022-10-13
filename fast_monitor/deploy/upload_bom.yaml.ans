@@ -1,0 +1,20 @@
+- name: Upload bom.xml
+  hosts: all
+  vars:
+    bom_project: '{{ lookup("env", "DT_PROJECT_ID") }}'
+    bom_api_key: '{{ lookup("env", "DT_API_KEY") }}'
+
+  tasks:
+  - slurp:
+      src: ../bom.xml
+    register: bom_file
+  - uri:
+      url: https://dt.promsoft.ru/api/v1/bom
+      method: PUT
+      body_format: json
+      headers:
+        X-API-Key: '{{ bom_api_key }}'
+      body:
+        project: '{{ bom_project }}'
+        bom: '{{ bom_file.content }}'
+

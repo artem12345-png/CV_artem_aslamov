@@ -1,0 +1,16 @@
+all:
+  children:
+    stage:
+      hosts:
+        frigate: { ansible_host: 192.168.0.78 }
+
+    production:
+      hosts:
+        git5:
+          ansible_host: git5.promsoft.ru
+          ansible_port: 5822
+
+  vars:
+    ansible_user: root
+    ansible_connection: ssh
+    ansible_ssh_common_args: -C

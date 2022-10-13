@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+pillow
+httpx
+pydantic[dotenv]
+fluent-logger
+sentry-sdk
+fluent
+pyyaml
+matplotlib
+pandas
+numpy
+clickhouse-driver
+aiochclient
+aiohttp
+aiographql-client
