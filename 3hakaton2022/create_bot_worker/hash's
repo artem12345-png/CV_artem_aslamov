@@ -1,0 +1,14 @@
+    "artem2": {
+        "api_id": 16829172,
+        "api_hash": "2b7fa8de41e1d0d03d76f5b3078a980c",
+        "phone": "+79955682071"
+    },
+    "denis1": {
+        "api_id": 9120524,
+        "api_hash": "11a018022698264afcdb9d7d9176231c",
+        "phone": "+79955732611"
+    },
+
+
+
+sessions = ["denis", "tanya", "valya", "vanya", "artem", "artem1", "artem2", "denis1"]
