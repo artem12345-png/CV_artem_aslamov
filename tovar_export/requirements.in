@@ -1,0 +1,6 @@
+pymongo
+pydantic[dotenv]
+httpx
+sentry_sdk
+pyyaml
+

@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  worker_tovar_export:
+    container_name: worker_tovar_export
+    image: {{ image_tag }}
+    command: python worker_tovar_export.py
+    environment:
+      - SERVICE_NAME=worker_tovar_export
+    env_file:
+      - {{ proj_name }}.env
+    volumes:
+      - /{{ path_server }}:/{{ path_container }}
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.worker_tovar_export.{{ inventory_hostname }}"
+
+networks:
+  default:
+    external:
+      name: {{ network }}

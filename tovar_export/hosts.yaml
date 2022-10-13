@@ -1,0 +1,19 @@
+all:
+  children:
+    stage:
+      hosts:
+        frigate: { ansible_host: 192.168.0.78 }
+
+    production:
+      hosts:
+        home.otelit.ru: {ansible_port: 22223, dep_scan: true}
+
+  vars:
+    ansible_user: root
+    ansible_connection: ssh
+    ansible_ssh_args: -C -o ControlMaster=auto -o ControlPersist=15m
+    ansible_ssh_pipelining: true
+    ansible_python_interpreter: auto
+    ansible_ssh_transfer_method: piped
+
+    dep_scan: false

@@ -1,0 +1,68 @@
+- name: Deploy tovar_export
+  hosts: all
+  vars:
+    proj_name: tovar_export
+    proj_dir: "/opt/{{ proj_name }}"
+    
+    path_server: "opt/public_images/site"
+    path_container: "opt/tovar_export/site"
+
+    network: '{{ lookup("env", "NETWORK") }}'
+    registry_addr: '{{ lookup("env", "REGISTRY_ADDR") }}'
+    registry_access_token: '{{ lookup("env", "REGISTRY_ACCESS_TOKEN") }}'
+    image_tag: 'git3.promsoft.ru:5005/otelit/tovar_export'
+    url: '{{ lookup("env", "URL") }}'
+    connection: '{{ lookup("env", "CONNECTION") }}'
+    sentry_dsn: '{{ lookup("env", "SENTRY_DSN") }}'
+
+  tasks:
+  - name: Test service
+    stat: path={{ proj_dir }}/docker-compose.yml
+    register: compose_file
+
+  - name: Create dest catalog
+    file:
+      path: "{{ item }}"
+      state: directory
+      mode: 0755
+    with_items:
+    - "{{ proj_dir }}"
+    - "{{ proj_dir }}/public_images/site"
+    - "/var/log/{{ proj_name }}"
+
+  - name: Links
+    file:
+      state: link
+      force: yes
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+    with_items:
+    - src: "/var/log/{{ proj_name }}"
+      dest: "{{ proj_dir }}/var-log"
+
+  - name: Docker login
+    docker_login:
+      username: gitlab-ci-token
+      password: "{{ registry_access_token }}"
+      registry_url: "{{ registry_addr }}"
+
+  - name: Docker-compose down
+    docker_compose:
+      project_src: "{{ proj_dir }}"
+      files: [docker-compose.yml]
+      state: absent
+    when: compose_file.stat.exists
+    ignore_errors: yes
+
+  - name: Configs
+    template:
+      src: "{{ item.src }}.j2"
+      dest: "{{ proj_dir }}/{{ item.dest }}"
+    with_items:
+    - {src: deploy.env, dest: "{{ proj_name }}.env"}
+    - {src: docker-compose.yml, dest: docker-compose.yml}
+
+  - name: Docker-compose worker up
+    shell: docker-compose pull && docker-compose up
+    args:
+      chdir: "{{ proj_dir }}"
