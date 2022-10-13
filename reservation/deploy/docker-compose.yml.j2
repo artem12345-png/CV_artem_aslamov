@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  {{ proj_name }}:
+    container_name: {{ proj_name }}
+    hostname: {{ proj_name }}
+    image: {{ image_tag }}
+    restart: always
+    command: "uvicorn --host 0.0.0.0 --port {{ port }} main:app"
+    env_file:
+    - {{ proj_name }}.env
+    volumes:
+    - /var/log/{{ proj_name }}:/opt/{{ proj_name }}/logs
+    ports:
+    - "{{ port }}:{{ port }}"
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: "docker.{{ proj_name }}.{{ inventory_hostname }}"
+
+networks:
+  default:
+    external:
+      name: {{ docker_network }}

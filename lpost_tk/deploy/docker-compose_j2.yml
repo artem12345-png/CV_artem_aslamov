@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  {{ PROJ_NAME }}:
+    container_name: {{ PROJ_NAME }}
+    image: {{ IMAGE_TAG }}
+    restart: always
+    env_file:
+      - {{ PROJ_NAME }}.env
+    #    extra_hosts:
+    #      - "daemon4.epool.ru:91.218.228.59"
+    dns:
+      - 8.8.8.8
+      - 1.0.0.1
+    ports:
+      - "7585:7585"
+    volumes:
+      - {{ PROJ_DIR }}/logs:/{{ PROJ_NAME }}/logs
+    command: "python3 start.py"
+    logging:
+      driver:
+        fluentd
+      options:
+        fluentd-address: "127.0.0.1:24224"
+        tag: docker.{{ PROJ_NAME }}.{{ inventory_hostname }}
+
+networks:
+  default:
+    external:
+      name: promsoft

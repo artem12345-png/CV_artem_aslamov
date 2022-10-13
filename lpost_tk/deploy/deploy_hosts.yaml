@@ -1,0 +1,15 @@
+all:
+  children:
+    epool:
+      hosts:
+        daemon3: {ansible_host: daemon3.epool.ru}
+    stage:
+      hosts:
+        frigate: {ansible_host: 192.168.0.78}
+      vars:
+        bind_host: 0.0.0.0
+  vars:
+    ansible_user: root
+    ansible_connection: ssh
+    ansible_ssh_common_args: -C
+    inner: false

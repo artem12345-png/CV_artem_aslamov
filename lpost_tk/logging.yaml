@@ -1,0 +1,32 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+  simple:
+    format: '%(asctime)s %(levelname) -10s %(name) -10s %(funcName) -15s %(lineno) 5d: %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  file: &file_args
+    class : logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: simple
+    filename: logs/info.log
+    maxBytes: 4194304 # 1024 * 1024 * 4
+    backupCount: 10
+    encoding: utf8
+  error:
+    <<: *file_args
+    level: ERROR
+    filename: logs/error.log
+loggers:
+  uvicorn:
+    level: DEBUG
+  urllib3:
+    level: DEBUG
+    propagate: True
+root:
+  level: DEBUG
+  handlers: [console, error, file]

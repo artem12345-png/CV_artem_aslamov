@@ -1,0 +1,89 @@
+- name: Deploy lpost_tk
+  hosts: all
+  serial: 1
+  vars:
+    PROJ_NAME: lpost_tk
+    PROJ_DIR: "/opt/{{ PROJ_NAME }}"
+    PORT: 7585
+
+    REGISTRY_ADDR: '{{ lookup("env", "REGISTRY_ADDR") }}'
+    REGISTRY_ACCESS_TOKEN: '{{ lookup("env", "REGISTRY_ACCESS_TOKEN") }}'
+    IMAGE_TAG: '{{ lookup("env", "IMAGE_TAG") }}'
+
+  tasks:
+    - name: Test compose
+      stat: path={{ PROJ_DIR }}/docker-compose.yml
+      register: compose_file
+
+    - name: Create dest catalog
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: 0755
+      with_items:
+        - "{{ PROJ_DIR }}/logs"
+        - "{{ PROJ_DIR }}/ym_token"
+        - "/var/log/{{ PROJ_NAME }}"
+
+    - name: Links
+      file:
+        state: link
+        force: yes
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      with_items:
+        - {src: "/var/log/{{ PROJ_NAME }}", dest: "{{ PROJ_DIR }}/logs"}
+
+    - name: Common configs
+      template:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      with_items:
+        - {src: deploy_j2.env, dest: "{{ PROJ_DIR }}/{{ PROJ_NAME }}.env"}
+        - {src: logrotate.j2, dest: "/etc/logrotate.d/{{ PROJ_NAME }}"}
+
+    - name: Docker login
+      community.docker.docker_login:
+        username: gitlab-ci-token
+        password: "{{ REGISTRY_ACCESS_TOKEN }}"
+        registry_url: "{{ REGISTRY_ADDR }}"
+
+    - name: Docker-compose down
+      community.docker.docker_compose:
+        project_src: "{{ PROJ_DIR }}"
+        state: absent
+      when: compose_file.stat.exists
+
+    - name: Copy docker-compose files
+      template:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      with_items:
+        - {src: docker-compose_j2.yml, dest: "{{ PROJ_DIR }}/docker-compose.yml"}
+
+    - name: Docker-compose up
+      community.docker.docker_compose:
+        project_src: '{{ PROJ_DIR }}'
+        pull: yes
+
+    - name: Wait for 10 sec
+      wait_for:
+        timeout: 10
+
+    - name: Wait for instance to be up and running
+      wait_for:
+        host: "{{ ansible_host }}"
+        port: "{{ PORT }}"
+        timeout: 60 # sec
+
+    - name: Test work server {{ inventory_hostname }}:{{ PORT }}
+      uri:
+        url: "http://{{ ansible_host }}:{{ PORT }}/self_check/"
+        body_format: json
+        return_content: yes
+      register: pg_inst
+
+    - name: Fail if error page {{ PORT }} content
+      fail:
+        msg: "error: {{ pg_inst.content }}"
+      when: pg_inst.json.status != 'Ok'

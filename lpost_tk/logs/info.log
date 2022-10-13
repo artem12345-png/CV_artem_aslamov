@@ -1,0 +1,10 @@
+2022-10-06 14:38:08,007 INFO       __main__   run                26: Service is started.
+2022-10-06 14:38:08,054 INFO       uvicorn.error serve              75: Started server process [46792]
+2022-10-06 14:38:08,054 INFO       uvicorn.error startup            47: Waiting for application startup.
+2022-10-06 14:38:08,054 INFO       uvicorn.error startup            61: Application startup complete.
+2022-10-06 14:38:08,056 INFO       uvicorn.error _log_started_message   207: Uvicorn running on http://0.0.0.0:7585 (Press CTRL+C to quit)
+2022-10-06 14:39:24,490 INFO       uvicorn.error shutdown          253: Shutting down
+2022-10-06 14:39:24,592 INFO       uvicorn.error shutdown           66: Waiting for application shutdown.
+2022-10-06 14:39:24,592 INFO       uvicorn.error shutdown           77: Application shutdown complete.
+2022-10-06 14:39:24,592 INFO       uvicorn.error serve              85: Finished server process [46792]
+2022-10-06 14:39:24,593 INFO       __main__   <module>           32: *** Service is shutdown. ***

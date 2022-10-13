@@ -1,0 +1,35 @@
+# -*- coding: utf-8
+sentry:
+  dsn: "https://42fb074eb4f44617bbef371196976da9@sentry2.epool.ru/133"
+logging:
+  version: 1
+  formatters:
+    simple:
+      format: '%(asctime)s %(levelname) -10s %(name) -10s %(funcName) -15s %(lineno) 5d: %(message)s'
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: INFO # ERROR
+      formatter: simple
+      stream: ext://sys.stdout
+    file: &file_args
+      class : logging.handlers.RotatingFileHandler
+      level: INFO
+      formatter: simple
+      filename: logs/reservation.log
+      maxBytes: 4194304 # 1024 * 1024 * 4
+      backupCount: 10
+    error:
+      <<: *file_args
+      level: ERROR
+      filename: logs/reservation-error.log
+  loggers:
+    reservation:
+      level: INFO
+      handlers: [console, error, file]
+    uvicorn:
+      level: DEBUG
+    databases:
+      level: ERROR
+  root:
+    level: DEBUG

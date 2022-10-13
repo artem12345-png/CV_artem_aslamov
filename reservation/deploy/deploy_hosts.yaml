@@ -1,0 +1,23 @@
+all:
+  children:
+    stage:
+      hosts:
+        frigate: {ansible_host: 192.168.0.78, inner: true}
+      vars:
+        docker_network: "promsoft"
+
+    production:
+      hosts:
+        daemon3: {ansible_host: daemon3.epool.ru}
+        daemon4: {ansible_host: daemon4.epool.ru}
+      vars:
+        docker_network: "promsoft"
+
+  vars:
+    ansible_user: root
+    ansible_connection: ssh
+    ansible_ssh_args: -C -o ControlMaster=auto -o ControlPersist=15m
+    ansible_ssh_pipelining: true
+    ansible_ssh_transfer_method: piped
+
+    inner: false

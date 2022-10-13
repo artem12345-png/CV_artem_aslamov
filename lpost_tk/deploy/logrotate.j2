@@ -1,0 +1,17 @@
+/var/log/{{ PROJ_NAME }}/*.log
+{
+    daily
+    dateext
+    missingok
+    rotate 28
+    compress
+    delaycompress
+    notifempty
+    # copytruncate
+
+    # use bzip2 whith higher compression than gzip
+    compresscmd /bin/bzip2
+    uncompresscmd /bin/bunzip2
+    compressoptions -9
+    compressext .bz2
+}
