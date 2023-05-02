@@ -1,0 +1,103 @@
+{% include 'head.html' %}
+{% block title %}
+  {% include 'navbar.html' %}
+{% endblock %}
+{% block content %}
+
+<form method="POST">
+    <div class="form-group">
+      <label for="comment_text">Фильтр по словам</label>
+      <input type="text" name="comment_text" class="form-control" placeholder="Введите фразу" required>
+    </div>
+    <div class="form-group">
+      <label for="domen_id">Фильтр по домену</label>
+      <input type="number" name="domain_id" min="0" class="form-control" placeholder="Введите домен" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Отфильтровать</button>
+</form>
+{% for review in reviews %}
+    {% if review.id %}
+    <b>ID</b> {{review.id}}<br>
+    {% endif %}
+    {% if review.comment_text %}
+     {% if ("pros" or "cons" or "title" or "review") in review.comment_text %}
+     {% for i in review.comment_text.split("\n") %}
+        {% if i in [
+          "pros:",
+          "cons:",
+          "title:",
+          "review:",
+          "prosText:",
+          "consText:",
+          "switchingReasons",
+          "chosenReasons",
+          "generalComments",
+          "prosText",
+          "consText",
+          "title",
+          "review"
+          ]%}
+          <b> {{ i }} </b> <br>
+        {% else %}
+          {{ i }} <br>
+        {% endif %}
+      {% endfor %}
+      {% else %}
+        {{review.comment_text}}<br>
+      {% endif %}
+    {% endif %}
+    {% if review.rating %}
+    <b>Рейтинг:</b> {{review.rating}}<br>
+    {% endif %}
+    {% if review.org_id %}
+    <b>org_id:</b> {{review.org_id}}<br>
+    {% endif %}
+    {% if review.date %}
+    <b>Дата:</b> <font color="gray">{{review.date}}</font>
+    {% endif %}
+    {% if review.domain_id %}
+    <b>Domain id:</b> {{review.domain_id}}<br>
+    {% endif %}
+    {% if review.commentid %}
+    <b>Commentid:</b> {{review.commentid}}<br>
+    {% endif %}
+    {% if review.user_name %}
+    <b>Username:</b> {{review.user_name}}<br>
+    {% endif %}
+    {% if review.source_id %}
+    <b>Source id:</b> {{review.source_id}}<br>
+    {% endif %}
+    {% if review.markup_data %}
+    <b>Markup data:</b> {{review.markup_data}}<br>
+    {% endif %}
+    {% if review.typos_corrected_text %}
+    <b>Typos corrected text:</b> {{review.typos_corrected_text}}<br>
+    {% endif %}
+    {% if review.lemmatized_text %}
+    <b>Lemmatized text:</b> {{review.lemmatized_text}}<br>
+    {% endif %}
+    {% if review.typos_corrected %}
+    <b>Typos corrected:</b> {{review.typos_corrected}}<br>
+    {% endif %}
+
+    {% if review.google_org_id %}
+    <b>Google org id:</b> {{review.google_org_id}}<br>
+    {% endif %}
+    {% if review.markup_info %}
+    <b>Markup info:</b> {{review.markup_info}}<br>
+    {% endif %}
+    {% if review.text_info %}
+    <b>Text info:</b> {{review.text_info}}<br>
+    {% endif %}
+    {% if review.additional_info %}
+    <b>Additional info:</b> <font color="gray">{{review.additional_info}}</font><br>
+    {% endif %}
+    {% if review.source_category %}
+    <b>Source category:</b> <font color="gray">{{review.source_category}}</font><br>
+    {% endif %}
+    <hr>
+  {% endfor %}
+{% endblock content %}
+{% include 'footer.html' %}
+
+  

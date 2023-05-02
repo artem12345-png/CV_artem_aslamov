@@ -1,0 +1,684 @@
+2022-12-27 22:35:31,533, ERROR, Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+, fastapi
+2022-12-27 22:35:51,451, INFO, Инициализация FastApi прошла успешно, logger
+2022-12-27 22:35:51,453, INFO, Старт FastApi, logger
+2022-12-27 22:37:39,635, INFO, Инициализация FastApi прошла успешно, logger
+2022-12-27 22:37:39,637, INFO, Старт FastApi, logger
+2022-12-27 22:37:57,730, WARNING, Failed to connect to 10.16.0.1:10124, clickhouse_driver.connection
+Traceback (most recent call last):
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 325, in connect
+    return self._init_connection(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 289, in _init_connection
+    self.socket = self._create_socket(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 261, in _create_socket
+    raise err
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 252, in _create_socket
+    sock.connect(sa)
+TimeoutError: timed out
+2022-12-27 22:38:28,510, WARNING, Failed to connect to 10.16.0.1:10124, clickhouse_driver.connection
+Traceback (most recent call last):
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 325, in connect
+    return self._init_connection(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 289, in _init_connection
+    self.socket = self._create_socket(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 261, in _create_socket
+    raise err
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 252, in _create_socket
+    sock.connect(sa)
+TimeoutError: timed out
+2022-12-27 22:40:12,222, WARNING, Failed to connect to 10.16.0.1:10124, clickhouse_driver.connection
+Traceback (most recent call last):
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 325, in connect
+    return self._init_connection(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 289, in _init_connection
+    self.socket = self._create_socket(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 261, in _create_socket
+    raise err
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 252, in _create_socket
+    sock.connect(sa)
+TimeoutError: timed out
+2022-12-27 22:43:59,413, INFO, Инициализация FastApi прошла успешно, logger
+2022-12-27 22:43:59,414, INFO, Старт FastApi, logger
+2022-12-27 22:44:44,182, WARNING, Failed to connect to 10.16.0.1:10124, clickhouse_driver.connection
+Traceback (most recent call last):
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 325, in connect
+    return self._init_connection(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 289, in _init_connection
+    self.socket = self._create_socket(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 261, in _create_socket
+    raise err
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 252, in _create_socket
+    sock.connect(sa)
+TimeoutError: timed out
+2022-12-27 23:04:04,070, INFO, Инициализация FastApi прошла успешно, logger
+2022-12-27 23:04:04,071, INFO, Старт FastApi, logger
+2022-12-27 23:04:44,587, WARNING, Failed to connect to 10.16.0.1:10124, clickhouse_driver.connection
+Traceback (most recent call last):
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 325, in connect
+    return self._init_connection(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 289, in _init_connection
+    self.socket = self._create_socket(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 261, in _create_socket
+    raise err
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 252, in _create_socket
+    sock.connect(sa)
+TimeoutError: timed out
+2022-12-27 23:05:14,628, WARNING, Failed to connect to 10.16.0.1:10124, clickhouse_driver.connection
+Traceback (most recent call last):
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 325, in connect
+    return self._init_connection(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 289, in _init_connection
+    self.socket = self._create_socket(host, port)
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 261, in _create_socket
+    raise err
+  File "/Users/artemaslamov/.pyenv/versions/creating-dicts/lib/python3.10/site-packages/clickhouse_driver/connection.py", line 252, in _create_socket
+    sock.connect(sa)
+TimeoutError: timed out
+2022-12-27 23:17:42,829, INFO, Инициализация FastApi прошла успешно, logger
+2022-12-27 23:17:42,831, INFO, Старт FastApi, logger
+2022-12-27 23:19:29,785, INFO, Инициализация FastApi прошла успешно, logger
+2022-12-27 23:19:29,791, INFO, Старт FastApi, logger
+2023-01-13 13:39:26,265, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 13:39:26,266, INFO, Старт FastApi, logger
+2023-01-13 13:39:26,954, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 13:39:26,977, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 13:43:57,898, WARNING, Error on socket shutdown: [Errno 9] Bad file descriptor, clickhouse_driver.connection
+2023-01-13 13:48:36,062, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 13:48:36,063, INFO, Старт FastApi, logger
+2023-01-13 13:48:36,723, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 13:48:36,745, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 13:50:09,036, WARNING, Error on socket shutdown: [Errno 9] Bad file descriptor, clickhouse_driver.connection
+2023-01-13 14:07:25,227, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:07:25,229, INFO, Старт FastApi, logger
+2023-01-13 14:07:25,910, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:07:25,931, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:19:42,170, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:19:42,171, INFO, Старт FastApi, logger
+2023-01-13 14:19:42,830, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:19:42,851, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:22:29,356, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:22:29,357, INFO, Старт FastApi, logger
+2023-01-13 14:22:30,007, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:22:30,028, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:23:04,263, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:23:04,264, INFO, Старт FastApi, logger
+2023-01-13 14:23:04,918, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 14:23:04,939, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:01:35,339, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:01:35,340, INFO, Старт FastApi, logger
+2023-01-13 15:01:36,000, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:01:36,023, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:12:11,101, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:12:11,122, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:28:09,708, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:28:09,710, INFO, Старт FastApi, logger
+2023-01-13 15:28:10,362, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:28:10,383, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:36:27,682, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:36:27,684, INFO, Старт FastApi, logger
+2023-01-13 15:36:28,577, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 15:36:28,598, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 18:46:22,347, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 18:46:22,350, INFO, Старт FastApi, logger
+2023-01-13 18:46:23,617, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 18:46:23,658, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 18:50:29,975, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 18:50:29,976, INFO, Старт FastApi, logger
+2023-01-13 18:50:30,637, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 18:50:30,658, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 18:57:24,252, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 18:57:24,254, INFO, Старт FastApi, logger
+2023-01-13 18:57:25,175, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 18:57:25,196, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:06:27,648, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:06:27,649, INFO, Старт FastApi, logger
+2023-01-13 19:06:28,329, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:06:28,350, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:08:01,490, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:08:01,491, INFO, Старт FastApi, logger
+2023-01-13 19:08:02,138, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:08:02,158, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:11:59,329, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:11:59,330, INFO, Старт FastApi, logger
+2023-01-13 19:12:00,164, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:12:00,184, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:13:02,827, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:13:02,828, INFO, Старт FastApi, logger
+2023-01-13 19:13:03,482, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:13:03,503, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:17:00,610, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:17:00,611, INFO, Старт FastApi, logger
+2023-01-13 19:17:01,268, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:17:01,288, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:46:45,294, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:46:45,295, INFO, Старт FastApi, logger
+2023-01-13 19:46:45,942, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 19:46:45,963, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:02:54,825, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:02:54,826, INFO, Старт FastApi, logger
+2023-01-13 20:02:55,476, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:02:55,497, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:03:05,625, WARNING, Error on socket shutdown: [Errno 9] Bad file descriptor, clickhouse_driver.connection
+2023-01-13 20:05:14,563, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:05:14,584, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:05:33,629, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:05:33,650, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:15:30,226, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:15:30,247, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:15:40,495, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:15:40,496, INFO, Старт FastApi, logger
+2023-01-13 20:15:41,151, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:15:41,172, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:19:15,411, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:19:15,412, INFO, Старт FastApi, logger
+2023-01-13 20:19:16,094, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:19:16,116, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:33:20,778, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:33:20,780, INFO, Старт FastApi, logger
+2023-01-13 20:33:21,438, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:33:21,459, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:34:21,022, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:34:21,023, INFO, Старт FastApi, logger
+2023-01-13 20:34:21,975, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:34:22,004, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:34:30,019, WARNING, Error on socket shutdown: [Errno 9] Bad file descriptor, clickhouse_driver.connection
+2023-01-13 20:35:05,791, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:35:05,792, INFO, Старт FastApi, logger
+2023-01-13 20:35:06,446, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:35:06,468, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:43:12,289, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:43:12,293, INFO, Старт FastApi, logger
+2023-01-13 20:43:13,728, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:43:13,785, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:52:53,339, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:52:53,343, INFO, Старт FastApi, logger
+2023-01-13 20:52:54,775, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:52:54,833, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:53:42,761, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:53:42,821, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:53:52,882, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:53:52,885, INFO, Старт FastApi, logger
+2023-01-13 20:53:54,292, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:53:54,350, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:54:55,887, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:54:55,888, INFO, Старт FastApi, logger
+2023-01-13 20:54:56,583, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 20:54:56,605, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:02:43,326, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:02:43,327, INFO, Старт FastApi, logger
+2023-01-13 21:02:43,980, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:02:44,000, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:03:32,056, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:03:32,057, INFO, Старт FastApi, logger
+2023-01-13 21:03:32,720, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:03:32,741, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:06:15,947, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:06:15,948, INFO, Старт FastApi, logger
+2023-01-13 21:06:16,717, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:06:16,738, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:18:07,365, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:18:07,393, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:19:49,850, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:19:49,878, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:29:09,301, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:29:09,305, INFO, Старт FastApi, logger
+2023-01-13 21:29:10,713, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:29:10,769, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:31:10,529, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:31:10,532, INFO, Старт FastApi, logger
+2023-01-13 21:31:11,936, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:31:11,994, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:33:44,191, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:33:44,196, INFO, Старт FastApi, logger
+2023-01-13 21:33:46,079, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:33:46,135, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:34:43,664, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:34:43,666, INFO, Старт FastApi, logger
+2023-01-13 21:34:45,078, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:34:45,135, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:43:53,366, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:43:53,369, INFO, Старт FastApi, logger
+2023-01-13 21:43:54,780, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:43:54,838, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:53:01,716, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:53:01,719, INFO, Старт FastApi, logger
+2023-01-13 21:53:03,135, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:53:03,193, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:55:05,922, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:55:05,925, INFO, Старт FastApi, logger
+2023-01-13 21:55:07,323, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:55:07,381, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:55:53,329, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:55:53,387, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:55:56,224, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:55:56,226, INFO, Старт FastApi, logger
+2023-01-13 21:55:58,324, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:55:58,405, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:57:04,136, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:57:04,139, INFO, Старт FastApi, logger
+2023-01-13 21:57:05,547, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 21:57:05,605, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:03:50,312, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:03:50,314, INFO, Старт FastApi, logger
+2023-01-13 22:03:51,714, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:03:51,771, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:07:19,750, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:07:19,753, INFO, Старт FastApi, logger
+2023-01-13 22:07:21,246, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:07:21,304, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:08:16,213, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:08:16,216, INFO, Старт FastApi, logger
+2023-01-13 22:08:17,624, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:08:17,681, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:11:25,199, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:11:25,202, INFO, Старт FastApi, logger
+2023-01-13 22:11:26,613, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:11:26,671, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:15:46,779, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:15:46,781, INFO, Старт FastApi, logger
+2023-01-13 22:15:48,733, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:15:48,791, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:19:50,791, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:19:50,794, INFO, Старт FastApi, logger
+2023-01-13 22:19:52,220, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:19:52,279, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:21:03,057, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:21:03,059, INFO, Старт FastApi, logger
+2023-01-13 22:21:04,491, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:21:04,550, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:22:48,491, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:22:48,495, INFO, Старт FastApi, logger
+2023-01-13 22:22:49,928, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:22:50,000, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:25:57,550, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:25:57,554, INFO, Старт FastApi, logger
+2023-01-13 22:25:58,957, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:25:59,018, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:30:37,072, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:30:37,076, INFO, Старт FastApi, logger
+2023-01-13 22:30:38,482, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:30:38,540, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:32:16,330, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:32:16,331, INFO, Старт FastApi, logger
+2023-01-13 22:32:17,011, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:32:17,032, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:35:52,181, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:35:52,182, INFO, Старт FastApi, logger
+2023-01-13 22:35:52,831, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:35:52,852, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:37:39,846, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:37:39,848, INFO, Старт FastApi, logger
+2023-01-13 22:37:40,510, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:37:40,536, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:38:52,029, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:38:52,061, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:39:47,261, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:39:47,262, INFO, Старт FastApi, logger
+2023-01-13 22:39:47,918, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:39:47,939, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:41:23,886, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:41:23,888, INFO, Старт FastApi, logger
+2023-01-13 22:41:24,538, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-13 22:41:24,560, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:33:55,932, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:33:55,933, INFO, Старт FastApi, logger
+2023-01-16 16:33:56,593, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:33:56,614, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:43:14,168, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:43:14,170, INFO, Старт FastApi, logger
+2023-01-16 16:43:14,823, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:43:14,844, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:45:04,381, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:45:04,382, INFO, Старт FastApi, logger
+2023-01-16 16:45:05,034, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:45:05,055, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:52:10,583, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:52:10,584, INFO, Старт FastApi, logger
+2023-01-16 16:52:11,233, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:52:11,254, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:53:12,192, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:53:12,193, INFO, Старт FastApi, logger
+2023-01-16 16:53:12,846, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:53:12,868, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:54:42,902, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:54:42,903, INFO, Старт FastApi, logger
+2023-01-16 16:54:43,569, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:54:43,590, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:55:44,460, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:55:44,461, INFO, Старт FastApi, logger
+2023-01-16 16:55:45,112, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 16:55:45,134, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 17:29:23,790, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 17:29:23,791, INFO, Старт FastApi, logger
+2023-01-16 17:29:24,452, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 17:29:24,472, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 17:33:13,225, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 17:33:13,226, INFO, Старт FastApi, logger
+2023-01-16 17:33:13,885, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 17:33:13,906, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 17:37:16,016, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 17:37:16,018, INFO, Старт FastApi, logger
+2023-01-16 17:37:16,673, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 17:37:16,693, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:07:41,738, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:07:41,740, INFO, Старт FastApi, logger
+2023-01-16 18:07:42,444, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:07:42,465, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:09:50,473, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:09:50,474, INFO, Старт FastApi, logger
+2023-01-16 18:09:51,132, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:09:51,153, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:15:10,320, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:15:10,321, INFO, Старт FastApi, logger
+2023-01-16 18:15:11,191, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:15:11,232, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:22:28,407, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:22:28,408, INFO, Старт FastApi, logger
+2023-01-16 18:22:29,396, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:22:29,429, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:27:57,090, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:27:57,091, INFO, Старт FastApi, logger
+2023-01-16 18:27:57,821, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-16 18:27:57,842, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-17 14:31:48,370, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-17 14:31:48,372, INFO, Старт FastApi, logger
+2023-01-17 14:31:49,189, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-17 14:31:49,213, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-17 17:19:20,126, WARNING, Error on 65.21.130.217:10124 ping: Unexpected EOF while reading bytes, clickhouse_driver.connection
+2023-01-17 17:19:20,127, WARNING, Connection was closed, reconnecting., clickhouse_driver.connection
+2023-01-17 17:19:20,127, WARNING, Error on socket shutdown: [Errno 57] Socket is not connected, clickhouse_driver.connection
+2023-01-19 19:21:47,747, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-19 19:21:47,769, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-19 19:21:50,017, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-19 19:21:50,038, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-19 19:26:43,451, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-19 19:26:43,474, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-19 19:28:18,074, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-19 19:28:18,108, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-19 19:30:19,764, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-19 19:30:19,797, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:41:19,331, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:41:19,356, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:42:38,931, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:42:38,966, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:50:21,687, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:50:21,688, INFO, Старт FastApi, logger
+2023-01-20 15:50:22,350, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:50:22,371, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:55:44,710, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:55:44,713, INFO, Старт FastApi, logger
+2023-01-20 15:55:46,135, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:55:46,195, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:57:24,874, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:57:24,877, INFO, Старт FastApi, logger
+2023-01-20 15:57:26,465, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:57:26,615, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:58:14,896, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:58:14,900, INFO, Старт FastApi, logger
+2023-01-20 15:58:16,470, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 15:58:16,532, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:01:46,495, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:01:46,497, INFO, Старт FastApi, logger
+2023-01-20 16:01:47,163, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:01:47,186, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:03:58,794, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:03:58,796, INFO, Старт FastApi, logger
+2023-01-20 16:03:59,448, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:03:59,469, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:06:43,599, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:06:43,600, INFO, Старт FastApi, logger
+2023-01-20 16:06:44,247, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:06:44,269, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:08:04,222, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:08:04,223, INFO, Старт FastApi, logger
+2023-01-20 16:08:04,872, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:08:04,894, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:09:17,373, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:09:17,375, INFO, Старт FastApi, logger
+2023-01-20 16:09:18,022, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:09:18,043, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:09:51,186, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:09:51,187, INFO, Старт FastApi, logger
+2023-01-20 16:09:51,854, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:09:51,875, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:15:06,177, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:15:06,179, INFO, Старт FastApi, logger
+2023-01-20 16:15:06,841, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:15:06,862, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:21:10,498, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:21:10,501, INFO, Старт FastApi, logger
+2023-01-20 16:21:11,167, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:21:11,189, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:23:10,281, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:23:10,304, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:29:50,859, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:29:50,888, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:32:30,052, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:32:30,073, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:32:59,122, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:32:59,143, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:33:43,768, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:33:43,797, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:36:34,306, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:36:34,329, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:47:41,832, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:47:41,860, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:47:51,974, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:47:51,994, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:48:08,485, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:48:08,505, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:50:34,149, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:50:34,185, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:51:16,254, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:51:16,275, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:51:21,944, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:51:21,987, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:52:08,829, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:52:08,860, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:52:20,983, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:52:21,008, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:56:36,644, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:56:36,675, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:59:32,737, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 16:59:32,758, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:04:41,260, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:04:41,282, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:06:44,055, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:06:44,076, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:07:23,846, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:07:23,867, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:09:04,662, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:09:04,683, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:10:59,277, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:10:59,300, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:11:34,462, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:11:34,484, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:13:18,301, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:13:18,333, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:14:15,830, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 17:14:15,885, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:27:53,923, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:27:53,955, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:29:20,560, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:29:20,584, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:30:22,301, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:30:22,327, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:38:45,482, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:38:45,528, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:41:55,303, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:41:55,305, INFO, Старт FastApi, logger
+2023-01-20 18:41:55,979, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:41:56,001, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:43:02,598, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:43:02,599, INFO, Старт FastApi, logger
+2023-01-20 18:43:03,275, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:43:03,296, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:44:33,885, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:44:33,887, INFO, Старт FastApi, logger
+2023-01-20 18:44:34,676, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:44:34,699, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:48:48,340, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:48:48,342, INFO, Старт FastApi, logger
+2023-01-20 18:48:49,005, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:48:49,026, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:50:48,823, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:50:48,824, INFO, Старт FastApi, logger
+2023-01-20 18:50:49,483, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:50:49,510, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:51:28,490, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:51:28,493, INFO, Старт FastApi, logger
+2023-01-20 18:51:29,521, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:51:29,542, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:57:19,657, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:57:19,658, INFO, Старт FastApi, logger
+2023-01-20 18:57:20,416, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 18:57:20,445, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 19:01:49,271, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 19:01:49,272, INFO, Старт FastApi, logger
+2023-01-20 19:01:49,923, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 19:01:49,944, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 19:11:52,851, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 19:11:52,853, INFO, Старт FastApi, logger
+2023-01-20 19:11:54,287, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 19:11:54,347, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:08:47,855, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:08:47,857, INFO, Старт FastApi, logger
+2023-01-20 20:08:48,540, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:08:48,562, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:11:55,844, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:11:55,845, INFO, Старт FastApi, logger
+2023-01-20 20:11:56,503, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:11:56,524, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:15:18,266, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:15:18,268, INFO, Старт FastApi, logger
+2023-01-20 20:15:18,930, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:15:18,952, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:17:56,278, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:17:56,280, INFO, Старт FastApi, logger
+2023-01-20 20:17:57,006, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:17:57,045, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:22:03,007, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:22:03,009, INFO, Старт FastApi, logger
+2023-01-20 20:22:03,665, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 20:22:03,686, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 21:21:50,961, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-20 21:21:50,983, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:29:24,507, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:29:24,509, INFO, Старт FastApi, logger
+2023-01-23 13:29:25,174, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:29:25,196, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:34:38,097, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:34:38,098, INFO, Старт FastApi, logger
+2023-01-23 13:34:38,748, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:34:38,769, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:39:56,416, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:39:56,418, INFO, Старт FastApi, logger
+2023-01-23 13:39:57,393, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:39:57,417, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:40:41,140, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:40:41,144, INFO, Старт FastApi, logger
+2023-01-23 13:40:42,345, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 13:40:42,376, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 14:24:37,425, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 14:24:37,478, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:35:31,434, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:35:31,464, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:38:29,976, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:38:30,006, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:43:52,089, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:43:52,117, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:44:50,684, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:44:50,724, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:49:08,509, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:49:08,549, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:49:12,877, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:49:12,878, INFO, Старт FastApi, logger
+2023-01-23 17:49:13,537, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:49:13,557, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:50:31,349, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:50:31,352, INFO, Старт FastApi, logger
+2023-01-23 17:50:33,346, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:50:33,404, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:51:29,684, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:51:29,686, INFO, Старт FastApi, logger
+2023-01-23 17:51:31,107, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:51:31,166, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:51:37,333, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:51:37,335, INFO, Старт FastApi, logger
+2023-01-23 17:51:38,747, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:51:38,806, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:53:19,227, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:53:19,228, INFO, Старт FastApi, logger
+2023-01-23 17:53:19,903, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:53:19,924, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:59:53,510, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 17:59:53,632, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:08:13,658, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:08:13,688, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:14:46,418, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:14:46,446, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:16:06,278, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:16:06,305, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:17:19,419, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:17:19,452, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:18:53,773, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:18:53,821, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:19:37,342, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:19:37,344, INFO, Старт FastApi, logger
+2023-01-23 18:19:38,026, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:19:38,047, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:24:28,436, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:24:28,457, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:25:04,272, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:25:04,273, INFO, Старт FastApi, logger
+2023-01-23 18:25:04,939, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:25:04,961, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:26:26,618, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:26:26,639, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:27:00,110, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:27:00,112, INFO, Старт FastApi, logger
+2023-01-23 18:27:00,776, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-23 18:27:00,797, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 15:43:56,199, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 15:43:56,201, INFO, Старт FastApi, logger
+2023-01-25 15:43:56,875, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 15:43:56,896, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 15:54:48,817, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 15:54:48,840, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 16:45:28,543, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 16:45:28,544, INFO, Старт FastApi, logger
+2023-01-25 16:45:29,284, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 16:45:29,306, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 21:56:17,252, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 21:56:17,308, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 21:57:31,073, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 21:57:31,094, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 21:57:49,939, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 21:57:49,969, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 21:58:08,128, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 21:58:08,149, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:00:54,566, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:00:54,594, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:06:02,139, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:06:02,161, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:15:26,972, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:15:26,993, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:21:54,103, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:21:54,129, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:28:31,348, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:28:31,376, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:36:04,529, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-25 22:36:04,559, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-26 16:04:00,422, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-26 16:04:00,502, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-26 16:08:52,806, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-26 16:08:52,809, INFO, Старт FastApi, logger
+2023-01-26 16:08:54,176, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-26 16:08:54,204, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-26 19:33:08,366, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-26 19:33:08,368, INFO, Старт FastApi, logger
+2023-01-26 19:33:09,068, INFO, Инициализация FastApi прошла успешно, logger
+2023-01-26 19:33:09,090, INFO, Инициализация FastApi прошла успешно, logger

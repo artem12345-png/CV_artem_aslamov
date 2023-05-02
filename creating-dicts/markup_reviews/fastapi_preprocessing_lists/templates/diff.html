@@ -1,0 +1,221 @@
+{% include 'head.html' %}
+{% block title %}
+  {% include 'navbar.html' %}
+{% endblock %}
+{% block content %}
+
+<style>
+    .progon_buttons {
+      width: 15em;
+      padding: 8px 12px;
+
+    }
+</style>
+
+<form method="POST">
+    <div class="form-group">
+      <label for="run_1">Номер прогона</label>
+        <div class="progon_buttons">
+            <input type="number" name="run_1" class="form-control" placeholder="Введите запрос" required>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="run_2">Номера прогона</label>
+        <div class="progon_buttons">
+            <input type="number" name="run_2" class="form-control" placeholder="Введите запрос" required>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-primary">Выполнить запрос</button>
+</form>
+
+{% if result %}
+        <table class="table table-bordered border-primary">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Run: {{first_run}}</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col">Run: {{second_run}}</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col">Diff</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <th scope="row">Markup git version: (commit):</th>
+                <td>{{fr_markup_version}}</td>
+                <td></td>
+                <td></td>
+                <td>{{sr_markup_version}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Markup startup date:</th>
+                <td>{{fr_run_date}}</td>
+                <td></td>
+                <td></td>
+                <td>{{sr_run_date}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Markup working time (H:M:S)</th>
+                <td>{{fr_working_time}}</td>
+                <td></td>
+                <td></td>
+                <td>{{sr_working_time}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Domain_id</th>
+                <td>{{fr_domain_id}}</td>
+                <td></td>
+                <td></td>
+                <td>{{sr_domain_id}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Topic dictionaries</th>
+                <td>{{fr_topic_dictionary}}</td>
+                <td></td>
+                <td></td>
+                <td>{{sr_topic_dictionary}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Ton dictionaries</th>
+                <td>{{fr_ton_dictionary}}</td>
+                <td></td>
+                <td></td>
+                <td>{{sr_ton_dictionary}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"><br></th>
+                <td><br></td>
+                <td><br></td>
+                <td><br></td>
+                <td><br></td>
+                <td><br></td>
+                <td><br></td>
+                <td><br></td>
+                <td><br></td>
+            </tr>
+            <tr>
+                <th scope="row">Reviews total</th>
+                <td>{{total_revs_run1}}</td>
+                <td></td>
+                <td></td>
+                <td>{{total_revs_run2}}</td>
+                <td></td>
+                <td></td>
+                <td>{{diff_total}}</td>
+                <td>{{diff_total_reviews_percent}}%</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Theme null reviews total</th>
+                <td>{{fr_nulls_phrases}}</td>
+                <td>{{fr_theme_null_reviews_total_percent}}%</td>
+                <td></td>
+                <td>{{sr_nulls_phrases}}</td>
+                <td>{{sr_theme_null_reviews_total_percent}}%</td>
+                <td></td>
+                <td>{{diff_theme_null_reviews_total_percent}}%</td>
+                <td>{{percent_diff_nulls_theme}}%</td>
+            </tr>
+
+            <tr>
+                <th scope="row">NEGATIVE</th>
+                <td>{{fr_negative}}</td>
+                <td>{{fr_negative_percent}}%</td>
+                <td></td>
+                <td>{{sr_negative}}</td>
+                <td>{{sr_negative_percent}}%</td>
+                <td></td>
+                <td>{{diff_negative_percent}}%</td>
+                <td>{{percent_diff_negative_phrases}}%</td>
+            </tr>
+
+            <tr>
+                <th scope="row">POSITIVE</th>
+                <td>{{fr_positive}}</td>
+                <td>{{fr_positive_percent}}%</td>
+                <td></td>
+                <td>{{sr_positive}}</td>
+                <td>{{sr_positive_percent}}%</td>
+                <td></td>
+                <td>{{diff_positive_percent}}%</td>
+                <td>{{percent_diff_positive_phrases}}%</td>
+            </tr>
+
+            <tr>
+                <th scope="row">NEUTRAL</th>
+                <td>{{fr_neutral}}</td>
+                <td>{{fr_neutral_percent}}%</td>
+                <td></td>
+                <td>{{sr_neutral}}</td>
+                <td>{{sr_neutral_percent}}%</td>
+                <td></td>
+                <td>{{diff_neutral_percent}}%</td>
+                <td>{{percent_diff_neutral_phrases}}%</td>
+            </tr>
+
+            <tr>
+                <th scope="row">all</th>
+                <td>{{fr_all_phrases}}</td>
+                <td></td>
+                <td></td>
+                <td>{{sr_all_phrases}}</td>
+                <td></td>
+                <td></td>
+                <td>{{diff_all_phrases}}</td>
+                <td>{{diff_all_phrases_percent}}%</td>
+            </tr>
+          </tbody>
+        </table>
+        {% else %}
+            Нет результатов по выбранным прогонам
+    {% endif %}
+
+
+<!--{% for res in result %}-->
+
+<!--    {% if res.text_id %}-->
+<!--    <b>TEXT ID</b> {{res.text_id}}<br>-->
+<!--    {% endif %}-->
+
+<!--    {% if res.topic_name %}-->
+<!--    <b>TOPIC</b> {{res.topic_name}}<br>-->
+<!--    {% endif %}-->
+
+<!--    {% if res.comment_text %}-->
+<!--        <b>COMMENT</b> {{res.comment_text}}<br>-->
+<!--    {% endif %}-->
+<!--    <b>______________________________________________________________________________________________________________________________</b><br>-->
+<!--  {% endfor %}-->
+
+
+{% endblock content %}
+{% include 'footer.html' %}
+

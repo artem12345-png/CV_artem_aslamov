@@ -1,0 +1,471 @@
+{% include 'head.html' %}
+<form method="GET">
+  {% block title %}
+  {% include 'navbar.html' %}
+  <button type="submit" class="btn btn-secondary">Filter</button>
+  {% endblock %}
+
+
+  <style>
+      p {
+      }
+
+      .comment_text {
+          font-size: 22px;
+      }
+
+      .container {
+          padding-right: auto;
+          padding-left: 1px;
+          margin-right: auto;
+          margin-left: 1px;
+      }
+
+      .filter_active {
+          background-color: LightBlue;
+      }
+
+      .form-group {
+          padding-right: auto;
+          padding-left: 1px;
+          margin-right: auto;
+          margin-left: 1px;
+      }
+
+      .form-group--fit {
+          width: fit-content;
+      }
+  </style>
+
+
+  {% block content %}
+  <div class="container-fluid p-4">
+
+    <a href="{{ url_for('get_markup_counters') }}"><b>Посмотреть информацию о прогонах</b><br></a><br>
+
+    <div class="form-group row">
+      <div class="col-1">
+        <label class="text-nowrap mr-2" for="exampleFormControlSelect1">Filter by run</label><br>
+      </div>
+      <div class="col-2 d-flex">
+        <select class="form-control" name="counters" id="exampleFormControlSelect1">
+          {% if counters %}
+          {{ counters }}
+          <option selected><b>{{counters}}</b>
+          <option>
+            {% endif %}
+            {% for i in counter%}
+          <option>{{i[0]}}</option>
+          {% endfor %}
+        </select>
+        {% if counters %}
+        <p class="filter_active"><b>{{counters}}</b></p>
+        {% endif %}
+      </div>
+      <div class="col-1">
+        <label class="text-nowrap mr-2" for="id">Filter by id</label>
+      </div>
+      <div class="col-2 d-flex">
+        {% if id %}
+        <input type="text" name="id" class="form-control" value="{{ id }}">
+        {% else %}
+        <input type="text" name="id" class="form-control" placeholder="filter by id">
+        {% endif %}
+        {% if id %}
+        <p class="filter_active"><b>{{ id }}</b></p>
+        {% endif %}
+      </div>
+      <div class="col-1">
+        <label class="text-nowrap mr-2" for="exampleFormControlSelect1">Fulltext by rating</label>
+      </div>
+      <div class="col-1 d-flex">
+        <select class="form-control" name="rating" id="exampleFormControlSelect1">
+          <option></option>
+          {% if rating %}
+          <option selected><b>{{rating}}</b>
+          <option>
+            {% for i in rating_db %}
+          <option>{{i[0]}}</option>
+          {% endfor %}
+          {% else %}
+          {% for i in rating_db%}
+          <option>{{i[0]}}</option>
+          {% endfor %}
+          {% endif %}
+        </select>
+        {% if rating %}
+        <p class="filter_active"><b>{{rating}}</b></p>
+        {% endif %}
+      </div>
+      <div class="col-1">
+        <label class="text-nowrap mr-2" for="exampleFormControlSelect1">Filter by domain id</label>
+      </div>
+      <div class="col-2 d-flex">
+        <select class="form-control" name="domain_id" id="exampleFormControlSelect1">
+          {% if query_domain %}
+          <option selected><b>{{query_domain}}</b>
+          <option>
+            {% for domain in domains %}
+          <option>{{domain}}</option>
+          {% endfor %}
+          {% else %}
+          <option></option>
+          {% for domain in domains %}
+          <option>{{domain}}</option>
+          {% endfor %}
+          {% endif %}
+        </select>
+        {% if query_domain %}
+        <p class="filter_active"><b>{{ query_domain }}</b></p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-1">
+        <label class="text-nowrap mr-2" for="comment_text">Filter by text</label>
+      </div>
+      <div class="col-5 d-flex">
+        {% if comment_text %}
+        <input type="text" name="comment_text" class="form-control" value="{{ comment_text }}">
+        {% else %}
+        <input type="text" name="comment_text" class="form-control" placeholder="Write a text">
+        {% endif %}
+        {% if comment_text %}
+        <p class="filter_active"><b>{{ comment_text }}</b></p>
+        {% endif %}
+      </div>
+      <div class="col-1">
+        <label class="text-nowrap mr-2" for="comment_text">Filter by phrases</label>
+      </div>
+      <div class="col-5 d-flex">
+        {% if phrases %}
+        <input type="text" name="phrases" class="form-control" value="{{ phrases }}">
+        {% else %}
+        <input type="text" name="phrases" class="form-control" placeholder="Введите фразу">
+        {% endif %}
+        {% if phrases %}
+        <p class="filter_active"><b>{{ phrases }}</b></p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-1">
+        <label class="text-nowrap mr-2" for="comment_text">Filter by theme</label>
+      </div>
+      <div class="col-5 d-flex">
+        {% if theme %}
+        <input type="text" name="theme" class="form-control" value="{{ theme }}">
+        {% else %}
+        <input type="text" name="theme" class="form-control" placeholder="Write a theme">
+        {% endif %}
+        {% if theme %}
+        <p class="filter_active"><b>{{ theme }}</b></p>
+        {% endif %}
+      </div>
+      <div class="col-1">
+        <label class="mr-2" for="exampleFormControlSelect1">Sentimentes filter (sentiment_label)</label>
+      </div>
+      <div class="col-1 d-flex">
+        <select class="form-control" name="sentiment_label" id="exampleFormControlSelect1">
+          {% if sentiment_label %}
+          <option selected><b>{{sentiment_label}}</b>
+          <option>
+            {% for i in overall_sentiment_label%}
+            {% if i[0] != None %}
+          <option>{{i[0]}}</option>
+          {% endif %}
+          {% endfor %}
+          {% else %}
+          <option></option>
+          {% for i in overall_sentiment_label%}
+          {% if i[0] != None %}
+          <option>{{i[0]}}</option>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+        </select>
+        {% if sentiment_label %}
+        <p class="filter_active"><b>{{sentiment_label}}</b></p>
+        {% endif %}
+      </div>
+      <div class="col-2">
+        <label class="text-nowrap mr-2" for="exampleFormControlSelect1">Fulltext santiment filter
+          (text_sentiment_label)</label>
+      </div>
+      <div class="col-1 d-flex">
+        <select class="form-control" name="text_sentiment_label" id="exampleFormControlSelect1">
+          <option></option>
+          {% if text_sentiment_label %}
+          <option selected><b>{{text_sentiment_label}}</b>
+          <option>
+            {% for i in overall_text_label%}
+          <option>{{i[0]}}</option>
+          {% endfor %}
+          {% else %}
+          {% for i in overall_text_label%}
+          <option>{{i[0]}}</option>
+          {% endfor %}
+          {% endif %}
+        </select>
+        {% if text_sentiment_label %}
+        <p class="filter_active"><b>{{text_sentiment_label}}</b></p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!--  <div class="form-group row">-->
+    <!--    <div class="col">-->
+    <!--      <select class="form-control" name="rating" id="exampleFormControlSelect1">-->
+    <!--        <option></option>-->
+    <!--        {% if rating %}-->
+    <!--        <option selected><b>{{rating}}</b>-->
+    <!--        <option>-->
+    <!--          {% for i in rating_db %}-->
+    <!--        <option>{{i[0]}}</option>-->
+    <!--        {% endfor %}-->
+    <!--        {% else %}-->
+    <!--        {% for i in rating_db%}-->
+    <!--        <option>{{i[0]}}</option>-->
+    <!--        {% endfor %}-->
+    <!--        {% endif %}-->
+    <!--      </select>-->
+    <!--      <label for="exampleFormControlSelect1">Fulltext by rating</label>-->
+    <!--      {% if rating %}-->
+    <!--      <p class="filter_active"><b>{{rating}}</b></p>-->
+    <!--      {% endif %}-->
+    <!--    </div>-->
+    <!--    <div class="col">-->
+    <!--      {% if id %}-->
+    <!--      <input type="text" name="id" class="form-control" value="{{ id }}">-->
+    <!--      {% else %}-->
+    <!--      <input type="text" name="id" class="form-control" placeholder="filter by id">-->
+    <!--      {% endif %}-->
+    <!--      <label for="id">Filter by id</label>-->
+    <!--      {% if id %}-->
+    <!--      <p class="filter_active"><b>{{ id }}</b></p>-->
+    <!--      {% endif %}-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--  <div class="form-group row">-->
+    <!--    <div class="col">-->
+    <!--      {% if comment_text %}-->
+    <!--      <input type="text" name="comment_text" class="form-control" value="{{ comment_text }}">-->
+    <!--      {% else %}-->
+    <!--      <input type="text" name="comment_text" class="form-control" placeholder="Write a text">-->
+    <!--      {% endif %}-->
+    <!--      <label for="comment_text">Filter by text</label>-->
+    <!--      {% if comment_text %}-->
+    <!--      <p class="filter_active"><b>{{ comment_text }}</b></p>-->
+    <!--      {% endif %}-->
+    <!--    </div>-->
+    <!--    <div class="col">-->
+    <!--      {% if theme %}-->
+    <!--      <input type="text" name="theme" class="form-control" value="{{ theme }}">-->
+    <!--      {% else %}-->
+    <!--      <input type="text" name="theme" class="form-control" placeholder="Write a theme">-->
+    <!--      {% endif %}-->
+    <!--      <label for="comment_text">Filter by theme</label>-->
+    <!--      {% if theme %}-->
+    <!--      <p class="filter_active"><b>{{ theme }}</b></p>-->
+    <!--      {% endif %}-->
+    <!--    </div>-->
+    <!--    <div class="col">-->
+    <!--      {% if phrases %}-->
+    <!--      <input type="text" name="phrases" class="form-control" value="{{ phrases }}">-->
+    <!--      {% else %}-->
+    <!--      <input type="text" name="phrases" class="form-control" placeholder="Введите фразу">-->
+    <!--      {% endif %}-->
+    <!--      <label for="comment_text">Filter by phrases</label>-->
+    <!--      {% if phrases %}-->
+    <!--      <p class="filter_active"><b>{{ phrases }}</b></p>-->
+    <!--      {% endif %}-->
+    <!--    </div>-->
+    <!--    <div class="col">-->
+    <!--      <select class="form-control" name="domain_id" id="exampleFormControlSelect1">-->
+    <!--        {% if query_domain %}-->
+    <!--        <option selected><b>{{query_domain}}</b>-->
+    <!--        <option>-->
+    <!--          {% for domain in domains %}-->
+    <!--        <option>{{domain}}</option>-->
+    <!--        {% endfor %}-->
+    <!--        {% else %}-->
+    <!--        <option></option>-->
+    <!--        {% for domain in domains %}-->
+    <!--        <option>{{domain}}</option>-->
+    <!--        {% endfor %}-->
+    <!--        {% endif %}-->
+    <!--      </select>-->
+    <!--      <label for="exampleFormControlSelect1">Filter by domain id</label>-->
+    <!--      {% if query_domain %}-->
+    <!--      <p class="filter_active"><b>{{ query_domain }}</b></p>-->
+    <!--      {% endif %}-->
+    <!--    </div>-->
+    <!--    <div class="col">-->
+    <!--      <select class="form-control" name="sentiment_label" id="exampleFormControlSelect1">-->
+    <!--        {% if sentiment_label %}-->
+    <!--        <option selected><b>{{sentiment_label}}</b>-->
+    <!--        <option>-->
+    <!--          {% for i in overall_sentiment_label%}-->
+    <!--          {% if i[0] != None %}-->
+    <!--        <option>{{i[0]}}</option>-->
+    <!--        {% endif %}-->
+    <!--        {% endfor %}-->
+    <!--        {% else %}-->
+    <!--        <option></option>-->
+    <!--        {% for i in overall_sentiment_label%}-->
+    <!--        {% if i[0] != None %}-->
+    <!--        <option>{{i[0]}}</option>-->
+    <!--        {% endif %}-->
+    <!--        {% endfor %}-->
+    <!--        {% endif %}-->
+    <!--      </select>-->
+    <!--      <label for="exampleFormControlSelect1">Sentimentes filter (sentiment_label)</label>-->
+    <!--      {% if sentiment_label %}-->
+    <!--      <p class="filter_active"><b>{{sentiment_label}}</b></p>-->
+    <!--      {% endif %}-->
+    <!--    </div>-->
+    <!--    <div class="col">-->
+    <!--      <select class="form-control" name="text_sentiment_label" id="exampleFormControlSelect1">-->
+    <!--        <option></option>-->
+    <!--        {% if text_sentiment_label %}-->
+    <!--        <option selected><b>{{text_sentiment_label}}</b>-->
+    <!--        <option>-->
+    <!--          {% for i in overall_text_label%}-->
+    <!--        <option>{{i[0]}}</option>-->
+    <!--        {% endfor %}-->
+    <!--        {% else %}-->
+    <!--        {% for i in overall_text_label%}-->
+    <!--        <option>{{i[0]}}</option>-->
+    <!--        {% endfor %}-->
+    <!--        {% endif %}-->
+    <!--      </select>-->
+    <!--      <label for="exampleFormControlSelect1">Fulltext santiment filter (text_sentiment_label)</label>-->
+    <!--      {% if text_sentiment_label %}-->
+    <!--      <p class="filter_active"><b>{{text_sentiment_label}}</b></p>-->
+    <!--      {% endif %}-->
+    <!--    </div>-->
+    <!--    <div class="col">-->
+    <!--      <select class="form-control" name="counters" id="exampleFormControlSelect1">-->
+    <!--        {% if counters %}-->
+    <!--        {{ counters }}-->
+    <!--        <option selected><b>{{counters}}</b>-->
+    <!--        <option>-->
+    <!--          {% endif %}-->
+    <!--          {% for i in counter%}-->
+    <!--        <option>{{i[0]}}</option>-->
+    <!--        {% endfor %}-->
+    <!--      </select>-->
+    <!--      <label for="exampleFormControlSelect1">Filter by run</label><br>-->
+    <!--      {% if counters %}-->
+    <!--      <p class="filter_active"><b>{{counters}}</b></p>-->
+    <!--      {% endif %}-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</form>-->
+    <!--</div>-->
+    <hr>
+    {% for review in reviews %}
+    {% if review.counter %}
+    ID: {{ review.text_id }}<br>
+    <a href="{{ url_for('get_markup_counter_by_int', counter=review.counter) }}">Run: <b>{{review.counter}}</b><br></a>
+    {% endif %}
+    {% if review.domain_id %}
+    Domain: <b style="ml-2">{{review.name}}</b> ({{review.domain_id}})<br>
+    {% if review.topic_name or review.phrases %}
+    {% for row in range(len(ast.literal_eval(review.topic_name)))%}
+    Topic name: <b style="ml-2">{{
+    ast.literal_eval(review.topic_name)[row]
+    }}</b> Topic id: <b  style="ml-2">{{ast.literal_eval(review.topic_id)[row]}}</b>
+    {% if review.phrases %}
+    Phrases: <b  style="ml-2">{{
+    ast.literal_eval(review.phrases)[row]
+    }}</b>
+    {% endif %}
+    Sentiment label: <b style="ml-2">{{ast.literal_eval(review.sentiment_label)[row]}}</b><br>
+    Theme name from clients: <b style="ml-2">{{
+    ast.literal_eval(review.theme_from_clients)[row]
+    }}</b> Clients theme id: <b style="ml-2">{{ast.literal_eval(review.clients_theme_id)[row]}}</b><br>
+    {% endfor %}
+    {% endif %}
+    {% if review.text_sentiment_label %}
+    Text sentiment label: <b style="ml-2">{{review.text_sentiment_label}}</b><br>
+    {% endif %}
+    {% if review.dict_name %}
+    Dict name: <b style="ml-2">{{review.dict_name}}</b><br>
+    {% endif %}
+    {% if review.ton_dictionary %}
+    Ton dicrionary: <b style="ml-2">{{review.ton_dictionary}}</b>
+    {% endif %}
+    {% if review.user_name %}
+    Username: {{review.user_name}}<br>
+    {% endif %}
+    {% if review.rating %}
+    Rating: <b style="ml-2">{{review.rating}}</b>
+    {% endif %}
+    <br style="ml-2">
+    {% endif %}
+    {% if review.comment_text %}
+    {% if ("pros" or "cons" or "title" or "review") in review.comment_text %}
+    {% for i in review.comment_text.split("\n") %}
+    {% if i in [
+    "pros:",
+    "cons:",
+    "title:",
+    "review:",
+    "prosText:",
+    "consText:",
+    "switchingReasons",
+    "chosenReasons",
+    "generalComments",
+    "prosText",
+    "consText",
+    "title",
+    "review"
+    ]%}
+    <b style="ml-2"> {{ i }} </b> <br>
+    {% else %}
+    {{ i }} <br>
+    {% endif %}
+    {% endfor %}
+    {% else %}
+    <div class="container">
+      <p class="comment_text mt-2 ml-2"> {{review.comment_text}} </p>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% if review.topics %}
+    <font color="gray">Topics: {{
+      review.topics | replace(
+      "
+      <class
+      'list'>", ''
+      ) | replace(
+      'defaultdict', ''
+      ) | replace(
+      '[', ''
+      ) | replace(
+      ']', ''
+      ) | replace(
+      '{', ''
+      ) | replace('}', '') | replace('(', '') | replace(')', '') | replace(
+      "'", ''
+      ) | replace('\\ n', '') | replace('\\n', '')
+      }}</font><br class="fs">
+    {% endif %}
+    {% if review.lemmas %}
+    <font color="gray">Lemmas: {{
+      review.lemmas | replace("[", "") | replace(
+      "]", ""
+      ) | replace("'", "") | replace(
+      ",", ", "
+      ) | replace(")", "") | replace(
+      "(", ""
+      )
+      }}</font><br>
+    {% endif %}
+    <br>
+    <hr>
+    {% endfor %}
+    {% endblock content %}
+  </div>
+  {% include 'footer.html' %}
